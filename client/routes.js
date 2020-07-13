@@ -62,6 +62,7 @@ FlowRouter.route('/login', {
 	name: 'login',
 
 	action() {
+		console.log("INTO LOGIN METHOD");
 		FlowRouter.go('home');
 	},
 });
@@ -70,6 +71,7 @@ FlowRouter.route('/home', {
 	name: 'home',
 
 	action(params, queryParams) {
+		console.log("INTO HOME METHOD");
 		KonchatNotification.getDesktopPermission();
 		if (queryParams.saml_idp_credentialToken !== undefined) {
 			Accounts.callLoginMethod({
